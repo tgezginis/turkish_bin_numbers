@@ -1,11 +1,11 @@
 # Bin Numbers for Turkish Banks
 [![Gem Version](https://badge.fury.io/rb/turkish_bin_numbers.svg)](http://badge.fury.io/rb/turkish_bin_numbers)
 
-Gives information about bank, card type and debit. Also you can query bin numbers by bank.
+Bin numbers used by Turkish Banks. You can query by bin number and get info (bank name, credit card type, etc.) or you can query by bank and card type and get list of bins.
 
 ## Requirements
 
-The only requirements are working a Ruby installation.
+The only requirement is a working Ruby installation.
 
 ## Installation
 
@@ -26,7 +26,7 @@ or install the gem on terminal.
 
 ## Usage
 
-**Get bin number details**
+**Get info by bin number**
 
 ```ruby
 TurkishBinNumbers.get(418342)
@@ -38,11 +38,19 @@ TurkishBinNumbers.get(418342)
 
 ```ruby
 TurkishBinNumbers.bins_of_bank("Ziraat Bankası")
-# => [454672, 444678, 444676, 540134, 540130, 676123, 512440, 476619, 516932, 444677, 407814, 454671, 547287, 542374, 523529, 513662, 527682, 534981, 447504, 413226, 404591, 676124, 533154, 531102, 528208, 454674, 546957, 530905, 549449, 454673, 469884]
+# => [454672, 444678, 444676, ...]
 ```
 
 
-**Get bin numbers which type is credit card**
+**Get bank list**
+
+```ruby
+TurkishBinNumbers.banks
+# => ["ABank", "Akbank", "Aktifbank", ...]
+```
+
+
+**Get bin numbers for non-debit credit cards**
 
 ```ruby
 TurkishBinNumbers.credit_card_bins
@@ -50,7 +58,7 @@ TurkishBinNumbers.credit_card_bins
 ```
 
 
-**Get bin numbers which type is debit card**
+**Get bin numbers for debit credit cards**
 
 ```ruby
 TurkishBinNumbers.debit_card_bins
@@ -58,7 +66,7 @@ TurkishBinNumbers.debit_card_bins
 ```
 
 
-**Get card type of bin number**
+**Get card type of bin number (Visa, MasterCard, American Express, Maestro)**
 
 ```ruby
 TurkishBinNumbers.detect_card_type(418342)

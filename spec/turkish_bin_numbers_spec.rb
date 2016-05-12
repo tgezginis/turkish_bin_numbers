@@ -28,6 +28,11 @@ describe TurkishBinNumbers do
     expect(bins_of_bank).not_to be_nil
   end
 
+  it 'should return bank list' do
+    banks = TurkishBinNumbers.banks
+    expect(banks).not_to be_nil
+  end
+
   it 'should return bin numbers which type is credit card' do
     credit_card_bins = TurkishBinNumbers.credit_card_bins
     expect(credit_card_bins).not_to be_nil

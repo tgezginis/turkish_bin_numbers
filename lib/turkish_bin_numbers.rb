@@ -28,6 +28,11 @@ module TurkishBinNumbers
     return bins.map {|b| b["bin_number"]}
   end
 
+  def self.banks
+    banks = @data.map {|b| b["bank_name"] }
+    return banks.uniq
+  end
+
   def self.detect_card_type(bin)
     bin = bin.to_s
     case
