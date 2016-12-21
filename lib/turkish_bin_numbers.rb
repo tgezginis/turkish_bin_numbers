@@ -40,7 +40,7 @@ module TurkishBinNumbers
       return "American Express"
     when bin =~ /^4/
       return "Visa"
-    when bin =~ /^(50|55)/
+    when bin =~ /^(51|52|53|54|55)/
       return "MasterCard"
     when bin =~ /^(55018|5020|5038|5612|5893|6304|6759|6761|6762|6763|0604|6390)/
       return "Maestro"
